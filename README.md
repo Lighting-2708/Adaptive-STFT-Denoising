@@ -12,7 +12,6 @@ Hệ thống được thiết kế để giải quyết bài toán khử nhiễu
 - `/src_matlab`: Mã nguồn cốt lõi xử lý STFT và Lọc IIR.
 - `/src_python`: Mã nguồn triển khai mô hình AI Demucs.
 - `/audio_samples`: Các tệp `.wav` trước và sau khi xử lý. 
-- `/docs`: Báo cáo chi tiết định dạng PDF (được biên soạn bằng LaTeX).
 
 ## 🎧 Nghe thử kết quả (Audio Samples)
 *Bạn có thể tải các file trong thư mục `/audio_samples` về để nghe thử sự khác biệt giữa các hệ thống.*
