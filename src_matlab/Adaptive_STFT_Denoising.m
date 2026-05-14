@@ -70,16 +70,12 @@ x_denoised = x_denoised / (max(abs(x_denoised)) + eps);
 %% ================== 8. Save output ======================
 audiowrite(outputFile, x_denoised, fs);
 %% ================== 9. Metrics (No-Reference) ==========
-% Tính toán lượng tín hiệu bị triệt tiêu chung
-residual = x - x_denoised;
-outputToResidualDb = 10 * log10(sum(x_denoised .^ 2) / (sum(residual .^ 2) + eps));
 fprintf('\n--- BÁO CÁO KẾT QUẢ ĐẦU RA ---\n');
 fprintf('Saved denoised file: %s\n', outputFile);
 fprintf('Audio duration: %.2f s\n', audioDuration);
 fprintf('Adaptive initial noise duration: %.2f s\n', noiseDuration);
 fprintf('Initial noise frames: %d / %d\n', noiseFrames, numFrames);
 fprintf('Low-energy frames used: %d / %d\n', max(1, round(params.lowEnergyPercent * numFrames / 100)), numFrames);
-fprintf('Output-to-residual ratio (Mức độ nén tín hiệu): %.2f dB\n', outputToResidualDb);
 %% ================== 10. Playback ========================
 fprintf('\nPlaying denoised signal...\n');
 playerDenoised = audioplayer(x_denoised, fs);
